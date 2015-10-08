@@ -24,13 +24,13 @@ class Directories(object):
 
         return path
 
-    def indices(self):
+    def paths_in_index(self):
         indices = {}
-        if not self.__indexEmpty():
+        if not self.__index_empty():
             indices = pickle.load(open(self.index, "rb"))
         return indices
 
-    def __indexEmpty(self):
+    def __index_empty(self):
         try:
             if os.path.getsize(self.index) > 0:
                 return False

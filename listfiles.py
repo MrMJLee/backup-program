@@ -8,7 +8,7 @@ def listfiles(searchArg=None):
     else:
         print "Files Matching %s:" % searchArg
 
-    indices = d.indices()
-    for x in indices:
+    paths = d.paths_in_index()
+    for x in paths:
         if searchArg == None or searchArg in x:
             print x

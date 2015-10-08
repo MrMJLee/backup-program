@@ -12,8 +12,9 @@ d = Directories()
 
 
 def store(directory):
-    directory_path = d.path(directory)
-    indices = d.indices()
+    # directory_path = d.path(directory)
+    directory_path = directory
+    indices = d.paths_in_index()
 
     # print indices
 
