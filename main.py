@@ -16,9 +16,15 @@ def main():
         if cmd == "init":
             init()
         elif cmd == "store":
-            pass
+            if len(argv) >= 3:
+                store(argv[2])
+            else:
+                print "No directory specified for store function"
         elif cmd == "list":
-            pass
+            if len(argv) >= 3:
+                listfiles(argv[2])
+            else:
+                listfiles()
         elif cmd == "restore":
             pass
         elif cmd == "test":
