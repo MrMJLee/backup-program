@@ -38,9 +38,3 @@ class Directories(object):
                 return True
         except OSError, e:
             return True
-
-
-if __name__ == '__main__':
-    a = Directories()
-    print a.paths(["aaa", "bbb"])
-    print a.path("sample")
