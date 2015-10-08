@@ -1,0 +1,92 @@
+------------------------------------------------------------
+C:\Python27\Scripts\pip run on 05/27/15 13:42:40
+Downloading/unpacking cx-Oracle
+  Getting page https://pypi.python.org/simple/cx_Oracle/
+  URLs to search for versions for cx-Oracle:
+  * https://pypi.python.org/simple/cx_Oracle/
+  Analyzing links from page https://pypi.python.org/simple/cx-oracle/
+    Skipping link https://pypi.python.org/packages/2.7/c/cx_Oracle/cx_Oracle-5.1.3-11g.win-amd64-py2.7.exe#md5=940538b99a52e414c0c100cd629fce51 (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/2.7/c/cx_Oracle/cx_Oracle-5.1.3-11g.win32-py2.7.exe#md5=c4618c499254ff9adf6db581b699e862 (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/2.7/c/cx_Oracle/cx_Oracle-5.1.3-12c.win-amd64-py2.7.exe#md5=235ce05c7fcb78e72a69a94e9ac45e25 (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/2.7/c/cx_Oracle/cx_Oracle-5.1.3-12c.win32-py2.7.exe#md5=4c3e18d4c50689b61dafd1f0f9805fd2 (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.3/c/cx_Oracle/cx_Oracle-5.1.3-11g.win-amd64-py3.3.exe#md5=b72eaf4a3dabc5e5b544a0fd7a61bcb3 (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.3/c/cx_Oracle/cx_Oracle-5.1.3-11g.win32-py3.3.exe#md5=756b1d154c78fdd0d7fd5fc3adb2ed72 (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.3/c/cx_Oracle/cx_Oracle-5.1.3-12c.win-amd64-py3.3.exe#md5=0476a02f43eaac019a6af12852e2b1ad (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.3/c/cx_Oracle/cx_Oracle-5.1.3-12c.win32-py3.3.exe#md5=418c0aee59fadfcf768ab8673b1b6aba (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.4/c/cx_Oracle/cx_Oracle-5.1.3-11g.win-amd64-py3.4.exe#md5=7a7ac7515a03d60ed8d5f62bc26d0764 (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.4/c/cx_Oracle/cx_Oracle-5.1.3-11g.win32-py3.4.exe#md5=1b8438c3b61bc2c026bcff219a9c0214 (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.4/c/cx_Oracle/cx_Oracle-5.1.3-12c.win-amd64-py3.4.exe#md5=3c4ecc9ea5937b43ce7e8512bba62935 (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .exe
+    Skipping link https://pypi.python.org/packages/3.4/c/cx_Oracle/cx_Oracle-5.1.3-12c.win32-py3.4.exe#md5=32491c97d099d6ed04fd686697e3a6ea (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .exe
+    Found link https://pypi.python.org/packages/source/c/cx_Oracle/cx_Oracle-5.1.3.tar.gz#md5=cd6ff16559cbc9c20087ec812c7092ab (from https://pypi.python.org/simple/cx-oracle/), version: 5.1.3
+    Skipping link http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/); not a file
+    Skipping link http://starship.python.net/crew/atuining (from https://pypi.python.org/simple/cx-oracle/); not a file
+    Skipping link http://www.python.org/topics/database/DatabaseAPI-2.0.html (from https://pypi.python.org/simple/cx-oracle/); unknown archive format: .html
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://cx-oracle.sourceforge.net (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://starship.python.net/crew/atuining (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://starship.python.net/crew/atuining (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://starship.python.net/crew/atuining (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://starship.python.net/crew/atuining (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://starship.python.net/crew/atuining (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Not searching http://starship.python.net/crew/atuining (from https://pypi.python.org/simple/cx-oracle/) for files because external urls are disallowed.
+  Downloading from URL https://pypi.python.org/packages/source/c/cx_Oracle/cx_Oracle-5.1.3.tar.gz#md5=cd6ff16559cbc9c20087ec812c7092ab (from https://pypi.python.org/simple/cx-oracle/)
+  Running setup.py (path:c:\users\joel\appdata\local\temp\pip_build_joel\cx-Oracle\setup.py) egg_info for package cx-Oracle
+    running egg_info
+    creating pip-egg-info\cx_Oracle.egg-info
+    writing pip-egg-info\cx_Oracle.egg-info\PKG-INFO
+    writing top-level names to pip-egg-info\cx_Oracle.egg-info\top_level.txt
+    writing dependency_links to pip-egg-info\cx_Oracle.egg-info\dependency_links.txt
+    writing manifest file 'pip-egg-info\cx_Oracle.egg-info\SOURCES.txt'
+    warning: manifest_maker: standard file '-c' not found
+    
+    reading manifest file 'pip-egg-info\cx_Oracle.egg-info\SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    writing manifest file 'pip-egg-info\cx_Oracle.egg-info\SOURCES.txt'
+  Source in c:\users\joel\appdata\local\temp\pip_build_joel\cx-oracle has version 5.1.3, which satisfies requirement cx-Oracle
+Installing collected packages: cx-Oracle
+  Running setup.py install for cx-Oracle
+    Running command C:\Python27\python.exe -c "import setuptools, tokenize;__file__='c:\\users\\joel\\appdata\\local\\temp\\pip_build_joel\\cx-Oracle\\setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record c:\users\joel\appdata\local\temp\pip-scoywe-record\install-record.txt --single-version-externally-managed --compile
+    running install
+    running build
+    running build_ext
+    building 'cx_Oracle' extension
+    error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27
+    Complete output from command C:\Python27\python.exe -c "import setuptools, tokenize;__file__='c:\\users\\joel\\appdata\\local\\temp\\pip_build_joel\\cx-Oracle\\setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record c:\users\joel\appdata\local\temp\pip-scoywe-record\install-record.txt --single-version-externally-managed --compile:
+    running install
+
+running build
+
+running build_ext
+
+building 'cx_Oracle' extension
+
+error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27
+
+----------------------------------------
+Cleaning up...
+  Removing temporary dir c:\users\joel\appdata\local\temp\pip_build_joel...
+Command C:\Python27\python.exe -c "import setuptools, tokenize;__file__='c:\\users\\joel\\appdata\\local\\temp\\pip_build_joel\\cx-Oracle\\setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record c:\users\joel\appdata\local\temp\pip-scoywe-record\install-record.txt --single-version-externally-managed --compile failed with error code 1 in c:\users\joel\appdata\local\temp\pip_build_joel\cx-Oracle
+Exception information:
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\pip\basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "C:\Python27\lib\site-packages\pip\commands\install.py", line 283, in run
+    requirement_set.install(install_options, global_options, root=options.root_path)
+  File "C:\Python27\lib\site-packages\pip\req.py", line 1435, in install
+    requirement.install(install_options, global_options, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\pip\req.py", line 706, in install
+    cwd=self.source_dir, filter_stdout=self._filter_install, show_stdout=False)
+  File "C:\Python27\lib\site-packages\pip\util.py", line 697, in call_subprocess
+    % (command_desc, proc.returncode, cwd))
+InstallationError: Command C:\Python27\python.exe -c "import setuptools, tokenize;__file__='c:\\users\\joel\\appdata\\local\\temp\\pip_build_joel\\cx-Oracle\\setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record c:\users\joel\appdata\local\temp\pip-scoywe-record\install-record.txt --single-version-externally-managed --compile failed with error code 1 in c:\users\joel\appdata\local\temp\pip_build_joel\cx-Oracle
