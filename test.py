@@ -22,13 +22,19 @@ def test():
         sizeofIndex = len(indices)
         sizeofFiles = len(filenames)
 
+        errorPath = []
         if sizeofFiles> 0 or sizeofIndex>0:
-            print "The size of index %d" %sizeofIndex
+            print "The size of index %d" % sizeofIndex
             print "The size of files in object folder %d" % sizeofFiles
-            for name in filenames:
-                if name in indices:
+            for n in indices:
+                if n in filenames:
+                    filenames.remove(n)
                     count+=1
+                else:
+                    errorPath.append(n)
             print "Matching filenames: %d" %count
+            print "Names of erroneous paths: ",
+            print ', '.join(errorPath)
 
     else:
         print "Index file doesn't exist"
