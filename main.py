@@ -28,7 +28,7 @@ def main():
         elif cmd == "restore":
             pass
         elif cmd == "test":
-            pass
+            test()
         elif cmd == "get":
             pass
     else:
