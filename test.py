@@ -15,9 +15,9 @@ def test():
      #   for name in dirs:
      #       print name
     if os.path.exists(d.index) and os.path.isfile(d.index):
-           # storing current hash values in a index file as a list
-        indices = d.paths_in_index().values()
-          # storing current filenames in the object folder as a list
+        # storing current hash values in a index file as a list
+        indices = d.paths_in_index()
+        # storing current filenames in the object folder as a list
         filenames = os.listdir(d.objects)
         sizeofIndex = len(indices)
         sizeofFiles = len(filenames)
@@ -27,20 +27,21 @@ def test():
             print "The size of index %d" % sizeofIndex
             print "The size of files in object folder %d" % sizeofFiles
             for n in indices:
-                if n in filenames:
-                    filenames.remove(n)
+                if indices.get(n) in filenames:
+                    filenames.remove(indices.get(n))
                     count+=1
                 else:
                     errorPath.append(n)
             print "Matching filenames: %d" %count
-            print "Names of erroneous paths: ",
-            print ', '.join(errorPath)
+            print "Names of erroneous paths: "
+            print '\n'.join(errorPath)
 
     else:
         print "Index file doesn't exist"
         person = raw_input('Would you like to create the index file?: (y/n) ')
         if(person.lower() == 'y'):
             init()
+            test()
 
     print "\n"
 
