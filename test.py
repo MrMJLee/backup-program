@@ -12,6 +12,7 @@ def test():
     contentsMatch()
 
 
+
 def test_index():
     print "Checking Index:"
     if os.path.exists(d.index) and os.path.isfile(d.index):
