@@ -11,14 +11,7 @@ from store import *
 
 def test():
     d = Directories()
-    indices = []
-    filenames = []
     count = 0;
-    #for root, dirs, files in os.walk(d.objects, topdown=False):
-     #   for name in files:
-     #       print name
-     #   for name in dirs:
-     #       print name
     if os.path.exists(d.index) and os.path.isfile(d.index):
         # storing current hash values in a index file as a list
         indices = d.paths_in_index()
@@ -26,7 +19,9 @@ def test():
         filenames = os.listdir(d.objects)
         sizeofIndex = len(indices)
         sizeofFiles = len(filenames)
+        # matching files
         existFiles = {}
+        # the names of any erroneous paths that don't have matching files
         errorPath = []
         if sizeofFiles> 0 or sizeofIndex>0:
             print "The size of index %d" % sizeofIndex
@@ -48,13 +43,19 @@ def test():
             if(person.lower() == 'y'):
                 init()
                 test()
+    contentsMatch(existFiles)
 
+
+def contentsMatch(existFiles):
         contentsWrong = []
         for file in existFiles:
-            sig= createFileSignature(file)
-            newhashvalue = sig[2]
-            if newhashvalue not in existFiles.values():
-                contentsWrong.append(sig[0])
+            if os.path.isfile(file):
+                sig= createFileSignature(file)
+                newhashvalue = sig[2]
+                if newhashvalue not in existFiles.values():
+                    contentsWrong.append(sig[0])
+            if os.path.isdir(file):
+                contentsMatch(file)
 
         if len(contentsWrong) !=0:
             doesntmatch = [x[0] for x in contentsWrong]
