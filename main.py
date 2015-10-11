@@ -26,11 +26,13 @@ def main():
             else:
                 listfiles()
         elif cmd == "restore":
-            pass
+            if len(argv) >=3:
+                restore(argv[2])
         elif cmd == "test":
             test()
         elif cmd == "get":
-            pass
+            if len(argv) >= 3:
+                get(argv[2])
     else:
         print "No arguments!"
 

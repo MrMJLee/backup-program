@@ -47,12 +47,10 @@ def get(searchArg):
 
 def copyFile(path,sourcePath,copyTo):
     if os.path.exists(copyTo):
-        ask = raw_input("File already exists, Overwrite? (y/n) ")
+        ask = raw_input("%s already exists, Overwrite? (y/n) " %path)
         if ask.lower() == 'y':
             shutil.copyfile(sourcePath ,copyTo)
             print path+ " saved successfully"
-        else:
-            quit()
     else:
         shutil.copyfile(sourcePath ,copyTo)
         print path+ " saved successfully"
