@@ -5,19 +5,23 @@ def restore(destPath=None):
     d = Directories()
     paths = d.paths_in_index()
     options = []
+
     for x in paths:
         options.append(x)
 
     for i in range(0,len(options)):
         path =  options[i]
-        sourcePath = os.path.join(d.objects, paths[path])
-        copyTo = os.path.split(path)[-1]
-        if destPath ==None:
-            copyFiles(path,sourcePath,copyTo)
-        else:
-            dest = os.path.join(destPath,copyTo)
-            copyFiles(path,sourcePath,dest)
-
+        try:
+            sourcePath = os.path.join(d.objects, paths[path])
+            copyTo = os.path.split(path)[-1]
+            if destPath is None:
+                copyFiles(path,sourcePath,copyTo)
+            else:
+                dest = os.path.join(destPath,copyTo)
+                copyFiles(path,sourcePath,dest)
+        except IOError:
+            print "Invalid Path"
+            break
 
 def copyFiles(path,sourcePath,copyTo):
     if os.path.exists(copyTo):

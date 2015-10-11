@@ -28,6 +28,8 @@ def main():
         elif cmd == "restore":
             if len(argv) >=3:
                 restore(argv[2])
+            else:
+                restore()
         elif cmd == "test":
             test()
         elif cmd == "get":
