@@ -28,7 +28,7 @@ def test():
             print "The size of files in object folder %d" % sizeofFiles
             for n in indices:
                 if indices.get(n) in filenames:
-                    filenames.remove(indices.get(n))
+                    #filenames.remove(indices.get(n))
                     existFiles[n] = indices.get(n)
                     count+=1
                 else:
@@ -36,6 +36,7 @@ def test():
             print "Matching filenames: %d\n" %count
             print "Names of erroneous paths: "
             print '\n'.join(errorPath) + '\n'
+
 
         else:
             print "Index file doesn't exist"
@@ -46,20 +47,25 @@ def test():
     contentsMatch(existFiles)
 
 
-def contentsMatch(existFiles):
+def contentsMatch(existFiles,objectPath):
         contentsWrong = []
+        newhashvalue = []
         for file in existFiles:
             if os.path.isfile(file):
                 sig= createFileSignature(file)
                 newhashvalue = sig[2]
-                if newhashvalue not in existFiles.values():
-                    contentsWrong.append(sig[0])
-            if os.path.isdir(file):
-                contentsMatch(file)
+                print sig
+        print newhashvalue
+        for newhash in newhashvalue:
+            if newhash not in existFiles.values():
+                contentsWrong.append(sig[0])
 
+
+             #if os.path.isdir(file):
+             #   contentsMatch(file)
         if len(contentsWrong) !=0:
-            doesntmatch = [x[0] for x in contentsWrong]
-            print "the names of objects that don't match their filename: "
+            doesntmatch = [x for x in contentsWrong]
+            print "The names of objects that don't match their filename: "
             print '\n'.join(doesntmatch)
         else:
             print "All names of objects match their filename"
