@@ -9,10 +9,11 @@ def get(searchArg):
     paths = d.paths_in_index()
     count = 0
     for x in paths:
-        if searchArg in x:
-            options.append(x)
+        count +=1
         if count ==50:
             break
+        if searchArg in x:
+            options.append(x)
     if len(options) ==0:
         print "No matching files exist"
 
