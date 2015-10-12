@@ -7,7 +7,6 @@ from test import test
 from get import get
 from restore import restore
 from sys import argv
-from log import loggerModule
 
 def main():
     # print sys.argv
@@ -15,7 +14,6 @@ def main():
         cmd = argv[1].lower()
         if cmd == "init":
             init()
-            loggerModule()
 
         elif cmd == "store":
             if len(argv) >= 3:
