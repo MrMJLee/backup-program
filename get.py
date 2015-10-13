@@ -1,57 +1,53 @@
-import os
 import shutil
+import os
 from directories import Directories
 
 d = Directories()
-def get(searchArg):
-    options = []
+def get(pattern):
     paths = d.paths_in_index()
-    count = 0
+    results = []
+    selection = None
 
-    for x in paths:
-        if count ==50:
-            break
-        if searchArg in x:
-            options.append(x)
-            count+=1
-    if len(options) ==0:
-        print "No matching files exist"
+    for path in paths:
+        if pattern in path:
+            results.append(path)
 
-    if len(options) ==1:
-        path = options[0]
-        print "Files Matching %s:" % searchArg
-        print path+"\n"
-        sourcePath = os.path.join(d.objects, paths[path])
-        copyTo = os.path.split(path)[-1]
-        copyFile(path,sourcePath,copyTo)
-
+    if len(results) == 0:
+        print "\nNo Match"
+    elif len(results) == 1:
+        selection = results[0]
     else:
-        print "Files Matching %s:" % searchArg
-        option = list(enumerate(options, start=1))
-        while(True):
-            for index, item in option:
-                print index, item
 
-            select = raw_input("\nSelect File Number / 'Q' of quit: ")
-            if select.lower() == 'q':
+        values = [results[x:x + 50] for x in xrange(0, len(results), 50)]
+        #print values
+        # list each set of fifty results and prompt the user to select a file
+        for res in values:
+            selection = select_from_list(res)
+            if selection == None:
+                print "\nInvalid Inputs" # catching invalid inputs and break.
                 break
-            else:
-                try:
-                    path =  option[int(select)-1][1]
-                    sourcePath = os.path.join(d.objects, paths[path])
-                    copyTo = os.path.split(path)[-1]
-                    copyFile(path,sourcePath,copyTo)
-                    break
-                except (IndexError, ValueError):
-                    print "Invalid options\n"
 
-def copyFile(path,sourcePath,copyTo):
-    if os.path.exists(copyTo):
-        ask = raw_input("%s already exists, Overwrite? (y/n) " %path)
-        if ask.lower() == 'y':
-            shutil.copyfile(sourcePath ,copyTo)
-            print path+ " saved successfully"
-    else:
-        shutil.copyfile(sourcePath ,copyTo)
-        print path+ " saved successfully"
+    if selection!= None:
+        copy_file(os.path.join(d.objects, paths[selection]), os.path.split(selection)[-1])
 
+# selection from user
+def select_from_list(results):
+    for path in list(enumerate(results, 1)):
+        print "%d:\t%s" % path
+    try:
+        path_select = int(raw_input("Select File Number:"))
+        selection = results[path_select - 1]
+        print selection
+        return selection
+
+    except (IndexError, ValueError):
+        return None
+
+# copy file
+def copy_file(tosave, dest):
+    if os.path.exists(dest) and not os.path.isdir(dest):
+        ask = raw_input("%s already exists, Overwrite? (y/n) " % dest)
+        if ask.lower() != 'y':
+            return None
+    shutil.copyfile(tosave, dest)
+    print dest + " saved successfully\n"
