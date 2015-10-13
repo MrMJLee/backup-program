@@ -5,12 +5,8 @@ from directories import Directories
 d = Directories()
 def get(pattern):
     paths = d.paths_in_index()
-    results = []
+    results = [path for path in paths if pattern in path]
     selection = None
-
-    for path in paths:
-        if pattern in path:
-            results.append(path)
 
     if len(results) == 0:
         print "\nNo Match"
@@ -23,8 +19,7 @@ def get(pattern):
         # list each set of fifty results and prompt the user to select a file
         for res in values:
             selection = select_from_list(res)
-            if selection == None:
-                print "\nInvalid Inputs" # catching invalid inputs and break.
+            if selection != None:
                 break
 
     if selection!= None:
