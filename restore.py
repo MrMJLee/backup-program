@@ -7,18 +7,17 @@ def restore(destPath=None):
     paths = d.paths_in_index()
 
     for path in paths.keys():
-        try:
             sourcePath = os.path.join(d.objects, paths[path])
            # print sourcePath
             if destPath is None:
                 dest = path
-            else:
+            elif (os.path.exists(destPath)):
                 dest = os.path.join(destPath, path)
+            else:
+                print "Invalid Path"
+                break
             directory = os.path.join(*os.path.split(dest)[0:-1])
             restoreFiles(dest,sourcePath,directory)
-        except IOError:
-            print "Invalid Path"
-            break
 
 def restoreFiles(dest, sourcePath,directory):
     if not os.path.exists(directory) and not os.path.isdir(directory):
