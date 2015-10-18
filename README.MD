@@ -30,7 +30,7 @@ Project ID: Assignment 2
 
 ```
 Git commit ids by Joel:
-Git commit ids by MJ: "108b068" , "6303d08", "13df22f", "d3c4812"
+Git commit ids by MJ: "108b068" , "6303d08", "13df22f", "d3c4812", "ec0a48a". 
 ```
 
 ```sh
