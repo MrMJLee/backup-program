@@ -1,10 +1,10 @@
 import os
 import os.path
-
+from logger import ArchiveLogger
 from store import *
 
 d = Directories()
-
+log = ArchiveLogger()
 
 def test():
     test_index()
@@ -27,13 +27,18 @@ def test_index():
             if indices.get(n) in filenames:
                 matching_paths += 1
             else:
-                print "File does not exist: % s" % n
+                log.log_error("File does not exist: % s" % n)
                 errors += 1
 
-        print "%d Matching files" % matching_paths
-        print "%d Errors" % errors
+        m_paths = "%d Matching files" % matching_paths
+        print m_paths
+        log.log_info(m_paths)
+
+        num_errors = "%d Errors" % errors
+        print num_errors
+        log.log_info(num_errors)
     else:
-        print "Index file doesn't exist"
+        log.log_error("Index file doesn't exist")
 
 
 def contentsMatch():
@@ -51,6 +56,6 @@ def contentsMatch():
                     num_wrong+=1
 
         if num_wrong !=0:
-            print "%d file(s) incorrect" % num_wrong
+            log.log_error("%d file(s) hash values incorrect" % num_wrong)
         else:
             print "All hash values correct"

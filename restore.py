@@ -22,19 +22,16 @@ def restore(destPath=None):
 
 
 def restoreFiles(dest, sourcePath, directory):
+    to_restore = False
     if not os.path.exists(directory) and not os.path.isdir(directory):
         os.makedirs(directory)  # make directory
     if os.path.exists(dest):
         ask = raw_input("%s already exists, Overwrite? (y/n) " % dest)
         if ask.lower() == 'y':
-            try:
-                shutil.copyfile(sourcePath, dest)
-            except OSError:
-                print "Could not copy file %s to %s" % (sourcePath, dest)
-            print dest + " saved successfully\n"
-        else:
-            print
+            to_restore = True
     else:
+        to_restore = True
+    if to_restore:
         try:
             shutil.copyfile(sourcePath, dest)
         except OSError:

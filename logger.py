@@ -22,10 +22,7 @@ class ArchiveLogger(object):
         self.fh.setLevel(self.file_log_level)
         self.fh.setFormatter(self.formatter)
         self.logger.addHandler(self.fh)
-        self.logger.info('\n---------\nLog started on %s.\n---------\n' % time.asctime())
-
-        print "init logger"
-
+        self.logger.info('Log started')
 
     def init_console(self):
         self.ch = logging.StreamHandler()
@@ -50,21 +47,10 @@ class ArchiveLogger(object):
 
     def log_info(self,msg):
         self.check_fh()
-        print "info"
         self.logger.info(msg)
 
     def log_error(self,msg):
         self.check_fh()
         self.logger.error(msg)
 
-    # def __exit__(self, exc_type, exc_val, exc_tb):
-    #     logging.shutdown([self.d.program_name])
-    #     print "shut down"
-
-#=================================================================================
-# In APPLICATION CODE, use whichever of the following is appropriate:
-
-# logger.warn('warn message')
-# logger.error('error message')
-# logger.critical('critical message')
 
