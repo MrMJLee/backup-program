@@ -1,7 +1,7 @@
+
 ```sh
 Student Name: Joel Waldock
 Student ID: 10222176
-
 Student Name: Myung Jong Lee
 Student ID: 13214654
 ```
@@ -10,15 +10,15 @@ Student ID: 13214654
 Project Name: "159.251 - My Backup Program"
 ==========================================
 
-Project ID: Assignment 6
+Project ID: Assignment 2
 ------------------------
 
 
 ###This program is designed to simply backup any files into a folder called "myArchive" and all backed up files could be restored on user's request.
 
->           ==========To use this program , follow these steps.==========
-
 ```sh
+           ==========To use this program , follow these steps.==========
+
 1. "main.py" takes one or more arguments to perform some tasks. (main.py <arg1><arg2>).
 2. calling "main.py init" - This command initialises the backup archive folder, object folder and index file within it.
 3. calling "main.py store <directory>""- This command adds the specified directory to the archive.
