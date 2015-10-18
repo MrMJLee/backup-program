@@ -1,61 +1,70 @@
-"""
-Create a log file handler which logs message to both the screen and the keyboard.
-The logfile can be either a rotating logfile or continuous.
-
-"""
 import time
 import logging
 import logging.handlers
+from directories import Directories
 
-PROGRAM_NAME      ="myBackup"
-LOG_FILENAME      = PROGRAM_NAME + '.log'
+class ArchiveLogger(object):
+    """docstring for ArchiveLogger"""
+    def __init__(self):
+        self.fh = None
+        self.d = Directories()
+        self.console_log_level = logging.ERROR
+        self.file_log_level = logging.INFO
+        self.formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        self.logger = logging.getLogger(self.d.program_name)
+        self.logger.setLevel(logging.DEBUG)
+        self.init_console()
 
-CONSOLE_LOG_LEVEL = logging.ERROR  # Only show errors to the console
-FILE_LOG_LEVEL    = logging.INFO   # but log info messages to the logfile
+    def init_file_logging(self):
+        if not self.d.check_myarchive():
+            raise Exception, "My Archive Does Not Exist"
+        self.fh = logging.FileHandler(self.d.logger)
+        self.fh.setLevel(self.file_log_level)
+        self.fh.setFormatter(self.formatter)
+        self.logger.addHandler(self.fh)
+        self.logger.info('\n---------\nLog started on %s.\n---------\n' % time.asctime())
 
-logger = logging.getLogger(PROGRAM_NAME)
-logger.setLevel(logging.DEBUG)
+        print "init logger"
 
-#====================================================================================
-# FILE-BASED LOG
 
-# Create formatter and add it to the handlers
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-#formatter = logging.Formatter('%(levelname)s - %(message)s')
+    def init_console(self):
+        self.ch = logging.StreamHandler()
+        self.ch.setLevel(self.console_log_level)
+        self.ch.setFormatter(logging.Formatter('%(message)s'))
+        self.logger.addHandler(self.ch)
 
-# LOGFILE HANDLER - SELECT ONE OF THE FOLLOWING TWO LINES
+    def print_logger(self):
+        self.check_fh()
+        if self.d.check_log_exists():
+            f = open(self.d.logger)
+            s = f.read()
+            print s
 
-fh = logging.FileHandler(LOG_FILENAME)                          # Continuous Single Log
-# fh = logging.handlers.RotatingFileHandler(LOG_FILENAME, backupCount=5) # Rotating log
+    def check_fh(self):
+        if self.fh is None:
+            self.init_file_logging()
 
-fh.setLevel(FILE_LOG_LEVEL)
-fh.setFormatter(formatter)
-logger.addHandler(fh)
+    def log_debug(self,msg):
+        self.check_fh()
+        self.logger.debug(msg)
 
-# logger.handlers[0].doRollover() # Roll to new logfile on application start
+    def log_info(self,msg):
+        self.check_fh()
+        print "info"
+        self.logger.info(msg)
 
-# Add timestamp
-logger.info('\n---------\nLog started on %s.\n---------\n' % time.asctime())
+    def log_error(self,msg):
+        self.check_fh()
+        self.logger.error(msg)
 
-#=================================================================================
-# CONSOLE HANDLER - can have a different loglevel and format to the file-based log
-ch = logging.StreamHandler()
-ch.setLevel(CONSOLE_LOG_LEVEL)
-formatter = logging.Formatter('%(message)s')     # simpler display format
-ch.setFormatter(formatter)
-logger.addHandler(ch)
+    # def __exit__(self, exc_type, exc_val, exc_tb):
+    #     logging.shutdown([self.d.program_name])
+    #     print "shut down"
 
 #=================================================================================
 # In APPLICATION CODE, use whichever of the following is appropriate:
 
-logger.debug('debug message ' + time.ctime() )
-logger.info('info message '   + time.ctime() )
 # logger.warn('warn message')
 # logger.error('error message')
 # logger.critical('critical message')
 
-#=================================================================================
-# Test Logger
-f = open("myBackup.log")
-s = f.read()
-print s

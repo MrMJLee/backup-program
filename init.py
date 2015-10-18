@@ -8,11 +8,11 @@ def init():
     d = Directories()
 
     # check if myArchive directory exists, create it if it doesn't
-    if os.path.exists(d.myArchive) and os.path.isdir(d.myArchive):
-        print "Archive Directory EXISTS\t %s" % d.myArchive
+    if os.path.exists(d.my_archive) and os.path.isdir(d.my_archive):
+        print "Archive Directory EXISTS\t %s" % d.my_archive
     else:
-        print "Archive Directory CREATED\t %s" % d.myArchive
-        os.makedirs(d.myArchive)
+        print "Archive Directory CREATED\t %s" % d.my_archive
+        os.makedirs(d.my_archive)
 
     # check if objects directory exists, create it if it doesn't
     if os.path.exists(d.objects) and os.path.isdir(d.objects):

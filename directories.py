@@ -9,20 +9,24 @@ class Directories(object):
     def __init__(self):
         super(Directories, self).__init__()
         #Define Archive Location
-        self.userDir = os.path.expanduser("~")
-        self.myArchive = os.path.join(self.userDir, "myArchive")
-        self.objects = os.path.join(self.myArchive, "objects")
-        self.index = os.path.join(self.myArchive, "INDEX")
-    def path(self, path):
-        return os.path.join(self.userDir, path)
+        self.program_name = "myArchive"
+        self.user_dir = os.path.expanduser("~")
+        self.my_archive = os.path.join(self.user_dir, self.program_name)
+        self.objects = os.path.join(self.my_archive, "objects")
+        self.index = os.path.join(self.my_archive, "INDEX")
+        self.logger = os.path.join(self.my_archive, "backup.log")
 
-    def paths(self, paths):
-        path = self.userDir
+    def check_myarchive(self):
+        if os.path.exists(self.my_archive) and os.path.isdir(self.my_archive):
+            return True
+        else:
+            return False
 
-        for d in paths:
-            path = os.path.join(path, d)
-
-        return path
+    def check_log_exists(self):
+        if os.path.exists(self.logger) and os.path.isfile(self.logger):
+            return True
+        else:
+            return False
 
     def paths_in_index(self):
         indices = {}
