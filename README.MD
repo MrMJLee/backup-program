@@ -13,11 +13,6 @@
 7. calling "main.py recover <destination path>" - This command restores everything in the archive into the named destination directory.
 ```
 
-```
-Git commit ids by Joel: "c34066d", "f5b8120", "d732d26", "120f812":
-Git commit ids by MJ: "108b068" , "6303d08", "13df22f", "d3c4812", "ec0a48a". 
-```
-
 ```sh
 Contact details:
 Joel - waldock@windowslive.com
